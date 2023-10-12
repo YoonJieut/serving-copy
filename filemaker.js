@@ -1,4 +1,5 @@
 const pokemonArray = require("./source/pokemon-array");
+const fs = require('fs');
 
 
 const fileList = [];
@@ -20,3 +21,12 @@ pokemonArray.forEach((pokemonName, index)=>{
 
 // console.log(fileList);
 // console.log(fileList.length);
+
+// ! 파일 생성 로직
+for(i=0; i<fileList.length; i++){
+  // fs.writeFile("파일이름","내용",'에러 화살표함수')
+  fs.writeFile(`./static/${pokemonName[i]}.html`,fileList[i],(err)=>{
+    console.error('에러 발생했소');
+  })
+  
+}
