@@ -25,8 +25,9 @@ pokemonArray.forEach((pokemonName, index)=>{
 // ! 파일 생성 로직
 for(i=0; i<fileList.length; i++){
   // fs.writeFile("파일이름","내용",'에러 화살표함수')
-  fs.writeFile(`./static/${pokemonName[i]}.html`,fileList[i],(err)=>{
-    console.error('에러 발생했소');
+  fs.writeFile(`./static/${pokemonArray[i]}.html`,fileList[i], (err)=>{
+    if(err){
+      console.error('에러 발생했소');
+    }
   })
-  
 }
